@@ -20,10 +20,10 @@ export class App extends React.Component {
   return (
     <div className="App">
 
-      <NAV/>  
+      <NAV auth={this.auth}{...this.props}/>  
       <Route exact path='/' render={props=><Home auth={this.auth}{...props}/>}></Route>
       <Route exact path='/callback' render={props=><Callback auth={this.auth}{...props}/>}></Route>
-      <Route exact path='/profile' component={Profile}></Route>
+      <Route exact path='/profile'  render ={props=><Profile auth={this.auth}{...props}/>}></Route>
     </div>
   );
 }
